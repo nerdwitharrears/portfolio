@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://nerdwitharrears.github.io/portfolio/sitemap.xml
+
