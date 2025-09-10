@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Naveenraj Subramani — Data Science Instructor</title>
+    <meta name="description" content="Portfolio of Naveenraj Subramani, Data Science Instructor. Teaching Python, SQL, Statistics, Machine Learning, Deep Learning, Power BI, and Data Analytics through hands-on projects and industry use cases.">
+    <link rel="canonical" href="https://example.com/">
+
+    <!-- Favicon placeholders
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Naveenraj Subramani — Data Science Instructor">
+    <meta property="og:description" content="Hands-on data science instruction: Python, SQL, ML, DL, Power BI, Analytics.">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Naveenraj Subramani — Data Science Educator & Analyst">
+    <meta name="twitter:description" content="Hands-on data science instruction: Python, SQL, ML, DL, Power BI, Analytics.">
+    <meta name="twitter:image" content="https://example.com/og-image.jpg">
+
+    <link rel="me" href="http://www.youtube.com/@CodeYourFutureTamil" />
+    <link rel="me" href="https://github.com/nerdwitharrears/annpractice" />
+    <link rel="me" href="https://www.linkedin.com/in/naveenraj-subramani-473285247/" />
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #0f172a; /* slate-900 */
+        --muted: #475569; /* slate-600 */
+        --surface: #f8fafc; /* slate-50 */
+        --border: #e2e8f0; /* slate-200 */
+        --accent: #2563eb; /* blue-600 */
+        --accent-contrast: #ffffff;
+        --max-w: 72rem; /* 1152px */
+        --radius: 12px;
+        --header-h: 64px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1020;
+          --text: #e5e7eb;
+          --muted: #94a3b8;
+          --surface: #111827;
+          --border: #1f2937;
+          --accent: #60a5fa;
+          --accent-contrast: #0b1020;
+        }
+      }
+
+      html { color-scheme: light dark; }
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+        line-height: 1.6;
+        background: var(--bg);
+        color: var(--text);
+      }
+      a { color: var(--accent); }
+      img { max-width: 100%; height: auto; }
+
+      .wrap { max-width: var(--max-w); margin-inline: auto; padding: 0 1rem; }
+      section { scroll-margin-top: calc(var(--header-h) + 16px); }
+
+      /* Header/Nav */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: saturate(140%) blur(8px);
+        background: color-mix(in oklab, var(--bg) 86%, transparent);
+        border-bottom: 1px solid var(--border);
+        height: var(--header-h);
+      }
+      .nav-bar { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+      .logo { font-weight: 800; letter-spacing: 0.5px; }
+      nav ul { list-style: none; display: flex; gap: clamp(0.5rem, 2vw, 1.25rem); margin: 0; padding: 0; }
+      nav a {
+        text-decoration: none;
+        color: var(--text);
+        padding: 0.25rem 0.125rem;
+        border-radius: 6px;
+      }
+      nav a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+      nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      /* Active underline for current hash target using :has() */
+      body:has(#about:target)    header nav a[href="#about"],
+      body:has(#skills:target)   header nav a[href="#skills"],
+      body:has(#projects:target) header nav a[href="#projects"],
+      body:has(#testimonials:target) header nav a[href="#testimonials"],
+      body:has(#experience:target) header nav a[href="#experience"],
+      body:has(#contact:target)  header nav a[href="#contact"] {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.35em;
+      }
+
+      /* Hero */
+      .hero { padding: clamp(2rem, 6vw, 5rem) 0; }
+      .hero h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin: 0 0 0.25rem; }
+      .hero .role { font-size: clamp(1.1rem, 2.5vw, 1.25rem); color: var(--muted); margin: 0 0 1rem; }
+      .hero p.lead { font-size: clamp(1rem, 2.2vw, 1.125rem); margin: 0.5rem 0 0.5rem; }
+      .hero p.sub { color: var(--muted); margin-top: 0.25rem; }
+      .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+      .badges { display: flex; gap: 1rem; align-items: center; margin-top: 1.25rem; color: var(--muted); }
+
+      .btn { display: inline-block; padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid var(--border); text-decoration: none; font-weight: 600; }
+      .btn--primary { background: var(--accent); color: var(--accent-contrast); border-color: transparent; }
+      .btn--secondary { background: transparent; color: var(--text); }
+      .btn:hover { filter: brightness(1.05); }
+      .btn:focus-visible { outline: 3px solid color-mix(in oklab, var(--accent) 60%, transparent); outline-offset: 2px; }
+
+      /* Sections */
+      .section { padding: clamp(2rem, 6vw, 4rem) 0; }
+      .section h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin: 0 0 1rem; }
+      .section .lead { color: var(--muted); margin-top: -0.25rem; margin-bottom: 1.25rem; }
+
+      .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+      .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+
+      /* About highlights */
+      .highlights .card { text-align: center; font-weight: 700; }
+
+      /* Skills */
+      .skills-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+      @media (min-width: 800px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+      .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+      .skill-group h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+      .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+      .tag { background: color-mix(in oklab, var(--accent) 12%, var(--surface)); color: var(--text); border: 1px solid color-mix(in oklab, var(--accent) 25%, var(--border)); padding: 0.25rem 0.5rem; border-radius: 999px; font-size: 0.9rem; }
+
+      /* Projects */
+      .grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+      @media (min-width: 700px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+      .project .meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0; }
+      .project .links { display: flex; gap: 0.75rem; }
+
+      /* Testimonials */
+      .quote { font-style: italic; }
+      blockquote { margin: 0; }
+      blockquote footer { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; }
+
+      /* Experience */
+      .role-line { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: baseline; }
+      .role-line .title { font-weight: 800; }
+      .bullets { margin: 0.75rem 0 0; padding-left: 1.2rem; }
+
+      /* Contact */
+      .contact-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+      @media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+      form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+      label { display: block; font-weight: 600; margin-top: 0.5rem; }
+      input, textarea { width: 100%; margin-top: 0.25rem; padding: 0.6rem 0.7rem; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: inherit; }
+      textarea { min-height: 120px; resize: vertical; }
+      .form-actions { margin-top: 0.75rem; }
+      .direct-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin-top: 1rem; }
+
+      /* Footer */
+      footer { border-top: 1px solid var(--border); padding: 1rem 0 2rem; color: var(--muted); }
+      .foot-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+      .foot-links { display: flex; gap: 1rem; }
+
+      /* Accessibility */
+      :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+      /* Print */
+      @media print {
+        header, .actions, .badges, .direct-links, .foot-links { display: none !important; }
+        body { color: #000; }
+        a { color: #000; text-decoration: underline; }
+      }
+
+      /* Nice subtle section separators */
+      .slice { background: linear-gradient(180deg, transparent 0, transparent 49%, var(--surface) 50%, transparent 51%, transparent 100%); background-size: 100% 8px; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Naveenraj Subramani",
+          "jobTitle": "Data Science Educator & Analyst",
+          "url": "https://example.com/",
+          "sameAs": [
+            "https://www.youtube.com/",
+            "https://github.com/",
+            "https://www.linkedin.com/"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "NS",
+          "url": "https://example.com/"
+        },
+        {
+          "@type": "Course",
+          "name": "Data Science Cohort",
+          "description": "Hands-on Python, SQL, Statistics, Machine Learning, Deep Learning, Power BI, and Data Analytics with projects and case studies.",
+          "provider": { "@type": "Organization", "name": "NS", "url": "https://example.com/" },
+          "instructor": { "@type": "Person", "name": "Naveenraj Subramani" }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body id="top">
+    <header>
+      <div class="wrap nav-bar" role="navigation" aria-label="Primary">
+        <div class="logo" aria-label="Logo">NS</div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <h1 id="hero-title">Naveenraj Subramani</h1>
+        <p class="role">Data Science Instructor</p>
+        <p class="lead">I help students master <strong>Python, SQL, Statistics, Machine Learning, Deep Learning, Power BI, and Data Analytics</strong> through hands-on projects and industry use cases.</p>
+        <p class="sub">Taught 5,000+ students across institutes and universities.</p>
+        <div class="actions" role="group" aria-label="Primary calls to action">
+          <a class="btn btn--primary" href="#contact">Join Next Cohort</a>
+          <a class="btn btn--secondary" href="#projects">View Projects</a>
+        </div>
+        <div class="badges" aria-label="Social badges">
+          <span>Find me on:</span>
+          <a href="https://www.youtube.com/@CodeYourFutureTamil">YouTube</a>
+          <a href="https://github.com/nerdwitharrears">GitHub</a>
+          <a href="https://www.linkedin.com/in/naveenraj-subramani-473285247/">LinkedIn</a>
+        </div>
+      </section>
+
+      <div class="slice" aria-hidden="true"></div>
+
+      <section id="about" class="section wrap" aria-labelledby="about-title">
+        <h2 id="about-title">About</h2>
+        <p>I’m <strong>Naveenraj Subramani</strong>, a Data Science instructor with B.Sc &amp; M.Sc in Mathematics and an M.S. in Data Science. I design structured, outcome-driven learning paths for engineering and arts &amp; science students.</p>
+        <p>I focus on <strong>hands-on implementation</strong>, <strong>industry case studies</strong>, and <strong>end-to-end projects</strong> so learners can ship real work.</p>
+        <div class="cards highlights" role="list">
+          <div class="card" role="listitem">5,000+ Students</div>
+          <div class="card" role="listitem">Nan Mudhalvan Programmes</div>
+          <div class="card" role="listitem">Workshops &amp; Cohorts</div>
+        </div>
+      </section>
+
+      <section id="skills" class="section wrap" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Core</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Statistics</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Data Analytics</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Practices</h3>
+            <div class="tags">
+              <span class="tag">curriculum design</span>
+              <span class="tag">mentoring</span>
+              <span class="tag">interview prep</span>
+              <span class="tag">portfolio building</span>
+              <span class="tag">industry use cases</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="tags">
+              <span class="tag">Jupyter</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">TensorFlow/Keras</span>
+              <span class="tag">Git/GitHub</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section wrap" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <div class="grid" role="list">
+          <article class="card project" role="listitem">
+            <h3>Retail Sales Forecasting (ARIMA/LSTM)</h3>
+            <p>Time-series forecasting pipeline with ARIMA/LSTM and dashboard handoff for planners.</p>
+            <div class="meta">
+              <span class="tag">Time Series</span>
+              <span class="tag">LSTM</span>
+              <span class="tag">Power BI</span>
+            </div>
+            <div class="links">
+              <a href="#">GitHub</a>
+              <a href="#">Read Case Study</a>
+            </div>
+          </article>
+
+          <article class="card project" role="listitem">
+            <h3>Customer Churn Prediction</h3>
+            <p>Classification pipelines with feature engineering, calibration, and SHAP explainability.</p>
+            <div class="meta">
+              <span class="tag">Classification</span>
+              <span class="tag">SHAP</span>
+              <span class="tag">pandas</span>
+            </div>
+            <div class="links">
+              <a href="#">GitHub</a>
+              <a href="#">Read Case Study</a>
+            </div>
+          </article>
+
+          <article class="card project" role="listitem">
+            <h3>NLP Resume Screener</h3>
+            <p>TF-IDF/Embeddings with model evaluation and error analysis for recruiter workflows.</p>
+            <div class="meta">
+              <span class="tag">NLP</span>
+              <span class="tag">TF‑IDF</span>
+              <span class="tag">Embeddings</span>
+            </div>
+            <div class="links">
+              <a href="#">GitHub</a>
+              <a href="#">Read Case Study</a>
+            </div>
+          </article>
+
+          <article class="card project" role="listitem">
+            <h3>Power BI Executive Dashboard</h3>
+            <p>DAX measures, drill-downs, and page navigation for leadership scorecards.</p>
+            <div class="meta">
+              <span class="tag">Power BI</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Data Modeling</span>
+            </div>
+            <div class="links">
+              <a href="#">GitHub</a>
+              <a href="#">Read Case Study</a>
+            </div>
+          </article>
+
+          <article class="card project" role="listitem">
+            <h3>SQL Analytics Pack</h3>
+            <p>Window functions, cohort analysis, and performance tuning across analytical queries.</p>
+            <div class="meta">
+              <span class="tag">SQL</span>
+              <span class="tag">Cohort</span>
+              <span class="tag">Tuning</span>
+            </div>
+            <div class="links">
+              <a href="#">GitHub</a>
+              <a href="#">Read Case Study</a>
+            </div>
+          </article>
+
+          <article class="card project" role="listitem">
+            <h3>Vision Defect Detection (DL)</h3>
+            <p>CNN baseline with augmentation and model monitoring for production readiness.</p>
+            <div class="meta">
+              <span class="tag">CNN</span>
+              <span class="tag">TensorFlow/Keras</span>
+              <span class="tag">MLOps</span>
+            </div>
+            <div class="links">
+              <a href="#">GitHub</a>
+              <a href="#">Read Case Study</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section wrap" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">Colleges, Universities &amp; Training Partners Say</h2>
+        <p class="lead">Selected feedback from programmes and workshops.</p>
+        <div class="grid" role="list">
+          <article class="card" role="listitem">
+            <blockquote>
+              <p class="quote">“Sessions were structured and practical. Learners appreciated the clarity of explanations and real-world tasks.”</p>
+              <footer><strong>Besant Technologies</strong> — Data Science Programme</footer>
+            </blockquote>
+          </article>
+          <article class="card" role="listitem">
+            <blockquote>
+              <p class="quote">“Hands-on approach with projects kept students engaged and confident to apply concepts independently.”</p>
+              <footer><strong>FITA Academy</strong> — Data Analytics Programme</footer>
+            </blockquote>
+          </article>
+          <article class="card" role="listitem">
+            <blockquote>
+              <p class="quote">“Well-sequenced modules and useful case studies aligned with current industry expectations.”</p>
+              <footer><strong>IT Vedant</strong> — Machine Learning Track</footer>
+            </blockquote>
+          </article>
+          <article class="card" role="listitem">
+            <blockquote>
+              <p class="quote">“Students connected theory to outcomes through guided datasets and evaluation checkpoints.”</p>
+              <footer><strong>Panimalar Engineering College (City Campus), Nan Mudhalvan</strong> — Cohort Workshops</footer>
+            </blockquote>
+          </article>
+          <article class="card" role="listitem">
+            <blockquote>
+              <p class="quote">“The programme emphasized applied learning with measurable progress across modules.”</p>
+              <footer><strong>Anna University, Nan Mudhalvan</strong> — Applied Data Science</footer>
+            </blockquote>
+          </article>
+          <article class="card" role="listitem">
+            <blockquote>
+              <p class="quote">“Clear delivery and supportive mentoring helped participants ship complete project portfolios.”</p>
+              <footer><strong>EGS Pillai Arts &amp; Science College, Nan Mudhalvan</strong> — Training Series</footer>
+            </blockquote>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section wrap" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <div class="role-line">
+          <div class="title">Freelance Data Science Instructor</div>
+          <div aria-hidden="true">|</div>
+          <div>Mar 2023 – Apr 2025</div>
+        </div>
+        <ul class="bullets">
+          <li>Designed and delivered structured modules on Python, SQL, Statistics, Machine Learning, Deep Learning, Power BI, and Data Analytics across Besant Technologies, FITA Academy, IT Vedant, and university programmes.</li>
+          <li>Trained engineering and arts &amp; science students under Nan Mudhalvan at Panimalar Engineering College (City Campus), Anna University, and EGS Pillai Arts &amp; Science College.</li>
+          <li>Applied hands-on teaching with live coding, datasets, and industry case studies to bridge theory with practice.</li>
+          <li>Guided students through end-to-end projects, portfolio building, and practical applications of data science tools.</li>
+          <li>Mentored learners in interview preparation, technical communication, and project presentations to improve placement readiness.</li>
+          <li>Developed scalable teaching resources and curriculum tailored for diverse academic and professional audiences.</li>
+        </ul>
+        <p style="margin-top:1rem">As a freelance data science instructor, I specialize in helping learners move from theory to application through structured modules and hands-on practice. I design clear learning paths across Python, SQL, statistics, and machine learning, and extend into deep learning, Power BI, and analytics workflows. Whether working with training partners or university cohorts, I emphasize live coding, curated datasets, and realistic case studies so students can build tangible projects and speak to their decisions. I’ve guided diverse groups—engineering and arts &amp; science—through end-to-end projects, portfolio development, and interview preparation, always focusing on clarity, feedback, and repeatable practice. My goal is to build confidence and employability by connecting fundamentals to real outputs and by providing resources that scale for different audiences and timelines.</p>
+      </section>
+
+      <section id="contact" class="section wrap" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <div class="contact-grid">
+          <div>
+            <p>Interested in cohorts, workshops, or 1-1 mentoring? Reach out.</p>
+            <div class="direct-links" aria-label="Direct links">
+              <a href="mailto:hello@example.com">Email</a>
+              <a href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+              <a href="https://www.youtube.com/">YouTube</a>
+              <a href="https://github.com/">GitHub</a>
+              <a href="https://www.linkedin.com/">LinkedIn</a>
+            </div>
+          </div>
+          <form action="mailto:hello@example.com" method="post" enctype="text/plain">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="Name" type="text" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="message">What do you want to learn?</label>
+              <textarea id="message" name="Message" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn--primary" type="submit">Send</button>
+              <button class="btn btn--secondary" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot-row">
+        <small>© <span id="year">2025</span> Naveenraj Subramani — Chennai, India</small>
+        <div class="foot-links">
+          <a href="#top" aria-label="Back to top">Back to top ↑</a>
+          <a href="https://www.youtube.com/">YouTube</a>
+          <a href="https://github.com/">GitHub</a>
+          <a href="https://www.linkedin.com/">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  
+</html>
+
