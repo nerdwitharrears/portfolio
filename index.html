@@ -97,11 +97,13 @@
   /* Mobile */
   #menu-toggle{display:none}
   .burger{display:none; font-size:1.3rem; color:var(--accent); background:none; border:0}
+  /* Hide mobile menu by default */
+  .menu{display:none}
   @media (max-width:900px){
     .nav ul{display:none}
     .burger{display:block}
     #menu-toggle:checked ~ .menu{display:block}
-    .menu{display:none; border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent); background:var(--bg-2)}
+    .menu{border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent); background:var(--bg-2)}
     .menu ul{list-style:none; margin:0; padding:0}
     .menu li{border-bottom:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
     .menu a{display:block; padding:14px 0}
@@ -186,6 +188,8 @@
   .contact-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:22px}
   .contact-cards .card{display:flex; flex-direction:column; align-items:center; gap:6px}
   .contact-cards i{color:var(--accent)}
+  /* Let long email/links wrap so they don't widen the grid */
+  .contact-cards .card a{overflow-wrap:anywhere; word-break:break-word}
 
   /* ===== Footer & rails ===== */
   footer{color:var(--muted); text-align:center; padding:26px 0; font-family:var(--mono); font-size:.9rem}
